@@ -1,0 +1,5 @@
+01/04/2022 02:43
+Beleza, falta corrigir o icone de buscar que ta ficando lá em cima, e também falta alinhar a 
+div de buscar com a div de adicionar tarefa. 
+
+ou seja, organizar css e html..

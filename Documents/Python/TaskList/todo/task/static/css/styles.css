@@ -1,10 +1,23 @@
+/* Varíaveis de Cor */
+:root{
+  --main-color: #3E2B82;
+  --second-color: #8579D2;
+  --base-color: #F0F2FA;
+  --text-main-color: black;
+  --text-second-color: #4A8E2F;
+  --yellow-color:#BAC247;
+  --blue-color: #B6DEE7;
+}
+
+
+
 .container-fluid{
   padding: 0;
 }
 
 /*Nav Bar*/
 .navbar{
-  border-bottom: 2px solid rgba(54, 4, 77, 0.3);
+  border-bottom: 2px solid var(--second-color) ;
   margin-bottom: 20px;
 }
 
@@ -17,19 +30,75 @@
 }
 
 .navbar-light .navbar-nav a.nav-link{
-  color: rgb(52, 1, 104);
+  color: var(--main-color);
   letter-spacing: 1px;
+}
+
+/* Botão de Adicionar + ferramenta de busca */
+
+ .add-div{
+   background-color: var(--base-color);
+   cursor: pointer;
+   display: inline-block;
+   color: var(--text-second-color);
+   padding: 6px;
+   border-radius: 5px;
+   margin-right: 4px;
+ }
+
+ .fas.fa-plus {
+ 
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+ .fas.fa-search {
+  position: absolute;
+  top: 12px;
+  right: 26px;
+}
+
+.search-div {
+  padding: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+/* Lista de Tarefas */
+.list-div{
+  padding: 0;
+} 
+
+.task-list{
+  padding: 0;
+}
+
+.task-item{
+  list-style: none;
+  font-size: 20px;
+  height: 50px;
+  padding-top: 10px;
+  border-bottom: 1px dashed var(--blue-color);
+}
+
+.fa-solid {
+  cursor: pointer;
+  margin: 5px;
+  font-size: 20px;
+  float: right;
+  color: var(--main-color);
 }
 
 /* Rodapé */
 footer{
-  background-color: rgb(255, 243, 243);
+  background-color: var(--base-color);
   height: 100px;
-  border-top: 2px solid rgba(54, 4, 77, 0.3);
+  border-top: 2px solid var(--second-color);
 }
 
 footer p {
-  color: rgb(52, 1, 104);
+  color: var(--main-color);
   text-align: center;
   top: 50%;
   position: relative;
