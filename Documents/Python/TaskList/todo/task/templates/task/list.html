@@ -7,20 +7,27 @@
 <div class= "offset-1 col-10 list-div">
   <h1> Lista de tarefas </h1>
 
-  <div class ="col-2 add-div">
-    <i class="fa-solid fa-square-plus"></i></i> Adicionar tarefas
-  </div>
 
-  <div class =" col-9 search-div">
-    <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome da tarefa para buscar...">
-    <i class="fas fa-search"></i>
-  </div>
+    <a id="add-link"  href="newtask/">
+      <div class ="col-2 add-div">
+        <i class="fa-solid fa-square-plus"></i></i>  Adicionar tarefas
+      </div>
+    </a>
+
+    <div class =" col-9 search-div">
+      <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome da tarefa para buscar...">
+      <i class="fas fa-search"></i>
+    </div>
+  
+
 
   <ul class="task-list">
-    <li class="task-item">
-      <span>Titulo da Tarefa</span>
-      <span> <i class="fa-solid fa-square-minus"></i></span>
-      <span> <i class="fa-solid fa-square-pen"></i></span>
+    {% for task in tasks %}
+      <li class="task-item">
+        <span> <a href="/task/{{task.id}}"> {{task.title}} </a> </span>
+        <span> <i class="fa-solid fa-square-minus"></i></span>
+        <span> <i class="fa-solid fa-square-pen"></i></span>
+    {% endfor %}
 </div>
 
 {% endblock %}
