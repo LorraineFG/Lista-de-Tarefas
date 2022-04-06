@@ -1,11 +1,22 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.http import HttpResponse
+from django.core.paginator import Paginator
+from django.contrib import messages
+
 from .models import Task
 from .forms import TaskForm
 
 
+
 def taskList(request):
-  tasks = Task.objects.all().order_by('-created_al')
+  tasks_list = Task.objects.all().order_by('-created_al')
+  
+  paginator = Paginator(tasks_list, 5)
+
+  page = request.GET.get('page')
+
+  tasks = paginator.get_page(page)
+  
   return render(request, 'task/list.html', {'tasks': tasks})
 
 def taskView(request, id):
@@ -42,6 +53,14 @@ def editTask(request, id):
 
   else:
     return render(request, 'task/edittask.html', {'form':form, 'task':task})
+
+def deleteTask(request, id):
+  task = get_object_or_404(Task, pk=id)
+  task.delete
+
+  messages.info(request, 'tarefa deletada com sucesso')
+
+  return redirect('/')
 
 def helloWorld(request):
   return HttpResponse(" Hello World! ")
