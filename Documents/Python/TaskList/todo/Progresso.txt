@@ -1,4 +1,0 @@
-04/04/2022 00:38
-
-falta alinhar a div de buscar com a div de adicionar tarefa. 
-Falta terminar o CRUD <$

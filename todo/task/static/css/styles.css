@@ -1,0 +1,135 @@
+/* Varíaveis de Cor */
+:root{
+  --main-color: #3E2B82;
+  --second-color: #8579D2;
+  --base-color: #F0F2FA;
+  --text-main-color: black;
+  --text-second-color: #4A8E2F;
+  --yellow-color:#BAC247;
+  --blue-color: #B6DEE7;
+}
+
+
+
+.container-fluid{
+  padding: 0;
+}
+
+/*Nav Bar*/
+.navbar{
+  border-bottom: 2px solid var(--second-color) ;
+  margin-bottom: 20px;
+}
+
+.navbar-nav{
+  margin: auto; 
+}
+
+.navbar-brand{
+  font-weight: bold;
+}
+
+.navbar-light .navbar-nav a.nav-link{
+  color: var(--main-color);
+  letter-spacing: 1px;
+}
+
+/* Botão de Adicionar + ferramenta de busca */
+
+  #add-link{
+    text-decoration: none;
+  }
+
+ .add-div{
+   background-color: var(--base-color);
+   cursor: pointer;
+   display: inline-block;
+   color: var(--text-second-color);
+   padding: 8px;
+   border-radius: 5px;
+   margin-right: 3px;
+   text-align: center;
+ }
+
+ .fas.fa-search {
+  position: absolute;
+  top: 19vh;
+  right: 13vw;
+  cursor: pointer;
+}
+
+.search-div {
+  padding: 0;
+  display: inline-block;
+}
+
+/* Lista de Tarefas */
+.list-div{
+  padding: 0;
+} 
+
+.task-list{
+  padding: 0;
+}
+
+.task-item{
+  list-style: none;
+  font-size: 20px;
+  height: 50px;
+  padding-top: 10px;
+  border-bottom: 1px dashed var(--blue-color);
+}
+
+.fa-solid {
+  cursor: pointer;
+  margin: 5px;
+  font-size: 20px;
+  float: right;
+  color: var(--main-color);
+}
+
+/* Message */
+ul.messages{
+  padding: 0;
+}
+
+ul.messages li{
+  list-style: none;
+}
+
+/* Paginator */
+.pagination{
+  margin-bottom: 20px;
+}
+
+.step-links{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.step-links .current{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+/*  Login */
+.auth-card{
+  margin-bottom: 30px;
+}
+
+/* Rodapé */
+footer{
+  background-color: var(--base-color);
+  height: 100px;
+  border-top: 2px solid var(--second-color);
+  position: fixed;
+  width:90% ;
+}
+
+footer p {
+  color: var(--main-color);
+  text-align: center;
+  top: 50%;
+}
