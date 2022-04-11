@@ -8,18 +8,25 @@
   <h1> Lista de tarefas </h1>
 
 
+  <div class="search-add">
     <a id="add-link"  href="newtask/">
       <div class ="col-2 add-div">
         <i class="fa-solid fa-square-plus"></i></i>  Adicionar tarefas
       </div>
     </a>
 
-    <div class =" col-9 search-div">
-      <form method='GET' id ="search-form">
-        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome da tarefa para buscar..." value="{{request.GET.search}}">
-        <i class="fas fa-search" id="search-btn"></i>
-      </form>
+    <div class="col-xs-6">
+      <div class="input-group">
+        <form method='GET' id="search-form">
+          <input type="text" class="form-control"  id="search" name="search" placeholder="Digite o nome da tarefa para buscar..." value="{{request.GET.search}}">
+          <span class="input-group-addon">
+            <button class="fa fa-search"></button>
+          </span>
+        </form>
+      </div>
     </div>
+  </div>
+    
 
   {% if messages %}
     <ul class='messages'>
