@@ -9,22 +9,18 @@
 
 
   <div class="search-add">
-    <a id="add-link"  href="newtask/">
       <div class ="col-2 add-div">
+        <a id="add-link"  href="newtask/">
         <i class="fa-solid fa-square-plus"></i></i>  Adicionar tarefas
-      </div>
-    </a>
+      </a>
+  </div>
+   
 
-    <div class="col-xs-6">
-      <div class="input-group">
-        <form method='GET' id="search-form">
-          <input type="text" class="form-control"  id="search" name="search" placeholder="Digite o nome da tarefa para buscar..." value="{{request.GET.search}}">
-          <span class="input-group-addon">
-            <button class="fa fa-search"></button>
-          </span>
-        </form>
-      </div>
-    </div>
+ <div class="col-xs-6 input-group">
+    <form method='GET' id="search-form">
+      <input type="text" class="form-control"  id="search" name="search" placeholder="Digite o nome da tarefa para buscar..." value="{{request.GET.search}}">
+      <span class="input-group-addon"><button class="fa fa-search"></button></span>
+    </form>
   </div>
     
 
@@ -42,12 +38,22 @@
 
     {% for task in tasks %}
 
-      <li class="task-item">
-        <span> <a href="task/{{task.id}}"> {{task.title}} </a></span>
-        <a href="delete/{{task.id}}" class="delete-btn"><span> <i class="fa-solid fa-square-minus"></i></span></a>
-        <a href="edit/{{task.id}}"><span> <i class="fa-solid fa-square-pen"></i></span></a>
-      </li> 
+    {% if task.done == 'doing' %}
 
+      <li class="task-item">
+
+    {% else %}
+
+      <li class="task-item-done">
+    
+    {% endif %}
+
+      <span> <a href="task/{{task.id}}"> {{task.title}} </a></span>
+      <a href="delete/{{task.id}}" class="delete-btn"><span> <i class="fa-solid fa-square-minus"></i></span></a>
+      <a href="edit/{{task.id}}"><span> <i class="fa-solid fa-square-pen"></i></span></a>
+      <a href="changestatus/{{task.id}}"><span> <i class="fa-solid fa-check"></i></span></a>
+          
+        </li>
     {% endfor %}
 
 </div>
